@@ -1,19 +1,19 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: demo
+  name: redis
   namespace: default
   labels:
-    app: demo
+    app: redis
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: demo
+      app: redis
   template:
     metadata:
       labels:
-        app: demo
+        app: redis
     spec:
       containers:
         - name: redis
