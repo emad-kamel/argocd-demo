@@ -15,16 +15,9 @@ spec:
       labels:
         app: redis
     spec:
-      volumes:
-      - name: task-pv-storage
-        persistentVolumeClaim:
-          claimName: pvc1
       containers:
         - name: redis
           image: redis
-          volumeMounts:
-          - mountPath: "/data"
-            name: task-pv-storage
           resources: {}
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
